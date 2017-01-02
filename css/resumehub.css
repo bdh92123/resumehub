@@ -1,0 +1,47 @@
+.promo i {
+    font-size: 7rem;
+}
+
+.nav-wrapper .col {
+    padding: 0 0.75rem;
+}
+
+html {
+    background-color: #eee;
+}
+
+.wizard {
+    position: absolute;
+    bottom: 0;
+}
+
+.wizard .step-wrapper {
+    display: inline-block;
+}
+
+.wizard .step-item {
+    float: left;
+}
+.wizard .step-line-wrapper {
+    height: 78px;
+}
+.wizard .step-line {
+    height: 12px;
+    background-color: red;
+    width: 100px;
+    margin-top: -21px;
+    margin-left: -4px;
+}
+.wizard .step-btn {
+    margin-left: -2px;
+}
+
+.wizard .icon-block i {
+    font-size: 3rem;
+}
+
+.wizard .step-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
