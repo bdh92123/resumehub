@@ -5,7 +5,7 @@
     <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/resumehub.css" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="css/wizard.css" media="screen,projection"/>
 
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -23,43 +23,81 @@
         <div class="section center">
             <div class="step-wrapper">
                 <div class="step-btn step-item">
-                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light red">
+                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light light-blue lighten-1">
                         <span class="center light-blue-text"><i class="material-icons">perm_identity</i></span>
                     </a>
                     <div class="center">Profile</div>
                 </div>
                 <div class="step-line-wrapper step-item valign-wrapper">
-                    <div class="step-line"></div>
+                    <div class="step-line light-blue lighten-1"></div>
                 </div>
                 <div class="step-btn step-item">
-                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light red">
-                        <span class="center light-blue-text"><i class="material-icons">perm_identity</i></span>
+                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light light-blue lighten-1">
+                        <span class="center light-blue-text"><i class="material-icons">star</i></span>
                     </a>
-                    <div class="center">Profile</div>
+                    <div class="center">Activities</div>
                 </div>
                 <div class="step-line-wrapper step-item valign-wrapper">
-                    <div class="step-line"></div>
+                    <div class="step-line light-blue lighten-1"></div>
                 </div>
                 <div class="step-btn step-item">
-                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light red">
-                        <span class="center light-blue-text"><i class="material-icons">perm_identity</i></span>
+                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light light-blue lighten-1">
+                        <span class="center light-blue-text"><i class="material-icons">subject</i></span>
                     </a>
-                    <div class="center">Profile</div>
+                    <div class="center">Blog</div>
                 </div>
                 <div class="step-line-wrapper step-item valign-wrapper">
-                    <div class="step-line"></div>
+                    <div class="step-line light-blue lighten-1"></div>
                 </div>
                 <div class="step-btn step-item">
-                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light red">
-                        <span class="center light-blue-text"><i class="material-icons">perm_identity</i></span>
+                    <a href="#" class="icon-block btn-floating btn-large waves-effect waves-light light-blue lighten-1">
+                        <span class="center light-blue-text"><i class="material-icons">done</i></span>
                     </a>
-                    <div class="center">Profile</div>
+                    <div class="center">Finish</div>
                 </div>
             </div>
         </div>
-        <div class="section">
-            asd
+        <div class="section step-profile">
+            <span class="title">Basic Profile</span>
+            <div>We support GitHub, LinkedIn profile.</div>
+            <div class="row">
+                <div class="input-field col s3">
+                    <a id="profile-git-btn" class="waves-effect waves-light btn light-blue lighten-1">Use GitHub</a>
+                </div>
+                <div class="input-field col s3">
+                    <a id="profile-linkedin-btn" class="waves-effect waves-light btn light-blue lighten-1">Use LinkedIn</a>
+                </div>
+            </div>
         </div>
+
+        <div class="section step-repo">
+            <span class="title">Activities</span>
+            <div>We support GitHub activity.</div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <a id="repo-git-btn" class="waves-effect waves-light btn light-blue lighten-1">Use GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="section step-blog">
+            <span class="title">Blog</span>
+            <div>We support RSS to show article.</div>
+            <div id="blog-box">
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <a class="waves-effect waves-light btn light-blue lighten-1 add-btn">Add Blog</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <a class="right waves-effect waves-light btn light-blue lighten-1">Next</a>
+            </div>
+        </div>
+
         <footer class="page-footer indigo">
             <div class="footer-copyright">
                 <div class="container">
@@ -69,9 +107,147 @@
         </footer>
     </div>
 
+    <script type="text/html" id="profile-tpl">
+        <div class="profile-row">
+            <form class="col s12">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input placeholder="Resume Hub" name="fullname" type="text" class="validate">
+                        <label>First Name</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <input placeholder="Leader" name="Headline" type="text" class="validate">
+                        <label>Headline</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Email" name="email" type="email" class="validate">
+                        <label>Email</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="http://" name="picture-url" type="text" class="validate">
+                        <label>Picture URL</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="http://github.com/bdh92123" name="website" type="text" class="validate">
+                        <label>Website</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input placeholder="Language" name="language" type="text" class="validate">
+                        <label>Python, Java Server</label>
+                    </div>
+                </div>
+                <span class="title">Positions</span>
+                <div id="position-box">
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <a class="waves-effect waves-light btn light-blue lighten-1 add-btn">Add Position</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </script>
+
+    <script type="text/html" id="position-tpl">
+        <div class="position-row">
+            <div class="row">
+                <a href="#" class="del-btn btn-floating waves-effect waves-light light-blue lighten-1 center">
+                    <span class="center light-blue-text"><i class="material-icons">clear</i></span>
+                </a>
+                <div class="input-field col s6">
+                    <input placeholder="Company" name="company" type="text" class="validate">
+                    <label>Company</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="Title" name="title" type="text" class="validate">
+                    <label>Title</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="start-date" type="date" class="datepicker">
+                    <label>Start Date</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="end-date" type="date" class="datepicker">
+                    <label>End Date</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="summary" class="materialize-textarea"></textarea>
+                    <label>Summary</label>
+                </div>
+            </div>
+            <br/><br/>
+        </div>
+    </script>
+
+    <script type="text/html" id="repository-tpl">
+        <div class="repository-row">
+            <div class="row">
+                <a href="#" class="del-btn btn-floating waves-effect waves-light light-blue lighten-1 center">
+                    <span class="center light-blue-text"><i class="material-icons">clear</i></span>
+                </a>
+                <div class="input-field col s6">
+                    <input placeholder="Name" name="name" type="text" class="validate">
+                    <label>Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="URL" name="url" type="text" class="validate">
+                    <label>URL</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s6">
+                    <input name="start-date" type="date" class="datepicker">
+                    <label>Start Date</label>
+                </div>
+                <div class="input-field col s6">
+                    <input name="end-date" type="date" class="datepicker">
+                    <label>End Date</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <textarea name="summary" class="materialize-textarea"></textarea>
+                    <label>Summary</label>
+                </div>
+            </div>
+            <br/><br/>
+        </div>
+    </script>
+
+
+    <script type="text/html" id="blog-tpl">
+        <div class="blog-row">
+            <div class="row">
+                <a href="#" class="del-btn btn-floating waves-effect waves-light light-blue lighten-1 center">
+                    <span class="center light-blue-text"><i class="material-icons">clear</i></span>
+                </a>
+                <div class="input-field col s6">
+                    <input placeholder="Name" name="name" type="text" class="validate">
+                    <label>Name</label>
+                </div>
+                <div class="input-field col s6">
+                    <input placeholder="URL" name="url" type="text" class="validate">
+                    <label>RSS URL</label>
+                </div>
+            </div>
+            <br/><br/>
+        </div>
+    </script>
 <!--Import jQuery before materialize.js-->
 <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script type="text/javascript" src="js/materialize.min.js"></script>
-<script src="js/init.js"></script>
+<script src="js/wizard.js"></script>
 </body>
 </html>

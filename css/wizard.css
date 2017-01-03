@@ -1,0 +1,61 @@
+html {
+    background-color: #eee;
+}
+
+.container {
+    width: 800px;
+}
+.wizard {
+    bottom: 0;
+}
+
+.step-wrapper {
+    display: inline-block;
+}
+.title {
+    font-size: 2rem;
+    padding: 0 1rem 0 0;
+}
+.step-body {
+    padding: 0 40px;
+}
+.inline {
+    display: inline-block;
+}
+.step-item {
+    float: left;
+}
+.step-line-wrapper {
+    height: 78px;
+}
+.step-line {
+    height: 12px;
+    background-color: red;
+    width: 100px;
+    margin-top: -21px;
+    margin-left: -4px;
+}
+.step-btn {
+    margin-left: -2px;
+}
+
+.icon-block i {
+    font-size: 3rem;
+}
+
+.step-wrapper:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.blog-row {
+    position: relative;
+}
+.add-btn {
+    width: 100%;
+}
+.del-btn {
+    position: absolute;
+    right: 0px;
+    margin-top: -30px;
+}
